@@ -8,11 +8,15 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Your App</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+		
 		<script>
           window.addEventListener('contextmenu', function (e) {
             e.preventDefault();
         });
     </script>
+
 
 
 		<!--<style>
@@ -24,6 +28,46 @@
     </style>-->
 </head>
 <body>
+			<script>
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyDUqJaTKmC5AZAEAa5s6c2M0ouwGNiMqj8",
+    authDomain: "octo-ae209.firebaseapp.com",
+    projectId: "octo-ae209",
+    storageBucket: "octo-ae209.appspot.com",
+    messagingSenderId: "1098499342626",
+    appId: "1:1098499342626:web:38944395661292c73fe57b",
+    measurementId: "G-RXMQ22DCMK"
+  };
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+    </script>
+
+	<script>
+    var docRef = db.collection("octo").doc("sample");
+		
+	if (val) {
+            src = game;
+        } else {
+            src = main;
+        }
+    }
+		
+    docRef.onSnapshot(function (doc) {
+        if (doc.exists) {
+            var data = doc.data();
+            var val = data.value;
+            var game = data.myGame;
+	    var main = data.main;
+
+        } else {
+
+        }
+    }, function (error) {
+
+    });
+</script>
+	
 <!-- partial:index.partial.html -->
 <div class="content"style = "padding-top: 100px">
 		<div class="lights-container">
