@@ -42,17 +42,36 @@
         firebase.initializeApp(firebaseConfig);
         var db = firebase.firestore();
     </script>
+<div id="iframe-container">
 
-	<script>
+    <div id="loading-indicator">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">LOADING...</div>
+    </div>
+
+    <iframe id="my-iframe" style="width: 100%; height: 100vh; border: none;"></iframe>
+</div>
+
+<script>
     var docRef = db.collection("oct").doc("sample");
-		
-	if (val) {
-            src = game;
+    var iframe = document.getElementById("my-iframe");
+    var loadingIndicator = document.getElementById("loading-indicator");
+
+    function setIframeSource(val, game) {
+
+        loadingIndicator.style.display = "flex";
+
+        if (val) {
+            iframe.src = game;
         } else {
-            src = main;
+            iframe.src = main;
         }
     }
-		
+
+    iframe.onload = function () {
+        loadingIndicator.style.display = "none";
+    };
+
     docRef.onSnapshot(function (doc) {
         if (doc.exists) {
             var data = doc.data();
@@ -60,6 +79,8 @@
             var game = data.myGame;
 	    var main = data.main;
 
+
+            setIframeSource(val, game);
         } else {
 
         }
