@@ -62,12 +62,15 @@
         firebase.initializeApp(firebaseConfig);
         var db = firebase.firestore();
     </script>
-    <div id="iframe-container">
+<div id="iframe-container">
 
+    <div id="loading-indicator">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">LOADING...</div>
+    </div>
 
     <iframe id="my-iframe" style="width: 100%; height: 100vh; border: none;"></iframe>
 </div>
-   
 
 <script>
     var docRef = db.collection("oct").doc("sample");
