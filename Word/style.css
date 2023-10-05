@@ -25,7 +25,7 @@ body {
   font-size: 1.5em;
   font-family: "Rubik Mono One", "Pathway Gothic One";
   color: #53565a;
-  background: #f1f6f8;
+  background: #166BAD;
 }
 
 .container {
@@ -33,10 +33,7 @@ body {
   max-width: 36rem;
   margin: auto;
   padding: 1rem;
-  background-image: url('bg.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+
 }
 @media (min-width: 600px) {
   .container {
