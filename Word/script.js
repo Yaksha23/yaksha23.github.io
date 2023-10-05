@@ -62,12 +62,7 @@ const app = new Vue({
       }
     },
     newGame() {
-      const confirmation = confirm('End this game and start a new one?');
-      if (!confirmation) return;
-      this.pickAQuote();
-      this.guesses = [];
-      this.strikes = [...defaultStrikes];
-      this.gameOver = false;
+location.reload();
     } },
 
   computed: {
