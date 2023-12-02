@@ -171,7 +171,7 @@ body {
 
 .screens {
   pointer-events: none;
-  max-width: 1280px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .screens > * {
