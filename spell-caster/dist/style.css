@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Henny+Penny&family=Tinos:wght@400;700&display=swap");
+
+@media screen and (min-width: 1024px) {
 :root {
   --font-body: "Tinos", serif;
   --font-heading: "Henny Penny", cursive;
@@ -13,6 +15,8 @@
   --color-crystal: #d54adf;
   --color-crystal-light: #d68ddc;
 }
+}
+
 
 html,
 body,
